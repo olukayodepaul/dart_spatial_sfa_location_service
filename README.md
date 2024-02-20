@@ -1,4 +1,4 @@
-#  open source analytic too
+#  Open Micro-Service
 > which could  be structure into miscro-service as users and latency increase, and data get larger
 
 > This API provide all the functionality for the cleaning service.
@@ -62,7 +62,7 @@ analytic_tool\  <--This is the root directory
 ```
 
 ### Docker image
-convert project to image
+convert project to image by running a docker build command to build the dockerfile into docker image. (-t) is the tag name. (.) means the docker file is in the current directory.
 ```
 docker build -t paulolukayode/education-ministry-api:0.0.0.development  .
 ```
@@ -74,16 +74,8 @@ docker run paulolukayode/education-ministry-api:0.0.0.development
 docker run --name postgres -e POSTGRES_PASSWORD=admin123 -p 5433:5432 postgres:latest 
 ```
 
-### Run Docker compose
+### Run Docker compose with docker compose
 docker image can also be run by docker compose using docker-compose.yaml file
 ```
 docker-compose f compose_file.yaml up  
 ```
-
-
-
-
-
-
-
-

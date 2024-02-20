@@ -3,14 +3,14 @@ from app.db import schemas
 from utils import http_exception_404, http_exception_ext_successful, http_except_ext_dict_data
 
 
-class Country_Service:
+class State_Service:
     
     def __init__(self, db: Session):
         self.db = db
         
-    def get_all_country(self):
+    def get_all_state(self):
         
-        get_data = self.db.query(schemas.Country).all()
+        get_data = self.db.query(schemas.State).all()
         if not get_data:
             raise http_exception_404()
         
@@ -23,9 +23,9 @@ class Country_Service:
         return {"detail":response_builder}
         
         
-    def get_country(self, continent_id: int):
+    def get_state(self, state_id: int):
         
-        get_data = self.db.query(schemas.Country).filter(schemas.Country.continent_id == continent_id).all()
+        get_data = self.db.query(schemas.State).filter(schemas.State.country_id == state_id).all()
         
         if not get_data:
             raise http_exception_404()

@@ -1,14 +1,14 @@
 from jose import jwt, JWTError
-import os
 from fastapi import Depends
 from fastapi.security import OAuth2PasswordBearer
 from utils import http_exception_401
+from config import config
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
-SECRET_KEY = os.getenv("JWT_SECRET_KEY")
-ALGORITHM = os.getenv("JWT_ALGORITHM")
-ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("JWT_ACCESS_TOKEN_EXPIRE_MINUTES"))
+SECRET_KEY = config["jwt"]['jwt_secret_key']
+ALGORITHM = config["jwt"]['algorithm']
+
 
 def create_access_token(payload: dict):
     to_encode = payload.copy()

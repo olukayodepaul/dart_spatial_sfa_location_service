@@ -1,4 +1,3 @@
-
 import redis
 from config import config
 import json

@@ -25,7 +25,7 @@ class Continent_Service:
         
     def get_continent(self, id: int):
         
-        get_data = self.db.query(schemas.Continent).filter(schemas.Continent.id == id).all()
+        get_data = self.db.query(schemas.Continent).filter(schemas.Continent.id == id).first()
         
         if not get_data:
             raise http_exception_404()

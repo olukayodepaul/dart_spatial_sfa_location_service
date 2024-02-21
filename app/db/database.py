@@ -1,18 +1,13 @@
-import os
 from sqlalchemy import create_engine, Column, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from config import config
 
-from dotenv import load_dotenv
-
-load_dotenv()
-
-DB_USER = os.getenv("DB_USER")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
-DB_HOST = os.getenv("DB_HOST")
-DB_PORT = os.getenv("DB_PORT")
-DB_NAME = os.getenv("DB_NAME")
-
+DB_USER = config['postgresql']['db_user']
+DB_PASSWORD = config['postgresql']['db_password']
+DB_HOST = config['postgresql']['db_host']
+DB_PORT = config['postgresql']['db_port']
+DB_NAME = config['postgresql']['db_name']
 
 DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 

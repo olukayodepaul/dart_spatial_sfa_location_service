@@ -29,4 +29,4 @@ class LocalGovt(Base):
     id = Column(Integer, primary_key=True, index=True, nullable=False)
     name = Column(String, index=True, nullable=False)
     created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text('now()'))
-    State_id = Column(Integer, ForeignKey('State.id'))
+    states_id = Column(Integer, ForeignKey('states.id'))

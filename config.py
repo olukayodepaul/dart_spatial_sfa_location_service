@@ -5,7 +5,7 @@ load_dotenv()
 config = dict({
     "redis":{
         "redis_host": os.getenv("REDIS_HOST"),
-        "redis_port" : int(os.getenv("REDIS_PORT")),
+        "redis_port" : int(os.getenv("REDIS_DB_PORT")),
     },
     "postgresql": {
         "db_user" : os.getenv("DB_USER"),

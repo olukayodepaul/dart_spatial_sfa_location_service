@@ -23,9 +23,9 @@ class State_Service:
         return {"detail":response_builder}
         
         
-    def get_state(self, state_id: int):
+    def get_state(self, country_id: int):
         
-        get_data = self.db.query(schemas.State).filter(schemas.State.country_id == state_id).all()
+        get_data = self.db.query(schemas.State).filter(schemas.State.country_id == country_id).first()
         
         if not get_data:
             raise http_exception_404()

@@ -48,6 +48,15 @@ def http_except_ext_dict_data() -> Dict:
     return {
         "data" : []
     }
+    
+def serialize_localgovt(localgovt) :
+    return {
+        "id": localgovt.id,
+        "name": localgovt.name,
+        "created_at": localgovt.created_at.strftime("%Y-%m-%dT%H:%M:%S.%f"),
+        "states_id": localgovt.states_id
+    }
+
 
 
 def hash_password(password: str)->bytes:

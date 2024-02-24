@@ -11,31 +11,31 @@ router = APIRouter()
 
 
 @router.get("/continent", status_code=status.HTTP_200_OK)
-async def get_all_continent(is_continent: Continent_Service = Depends(continent_service), add_route_protection = Depends(get_current_user)):
-    return is_continent.get_all_continent()
+async def get_all_continent(is_continent: Continent_Service = Depends(continent_service), injection = Depends(get_current_user)):
+    return injection.get_all_continent()
 
 @router.get("/continent/{id}", status_code=status.HTTP_200_OK)
-async def get_all_continent(id: int, is_continent: Continent_Service = Depends(continent_service), add_route_protection = Depends(get_current_user)):
-    return is_continent.get_continent(id)
+async def get_all_continent(id: int, is_continent: Continent_Service = Depends(continent_service), injection = Depends(get_current_user)):
+    return injection.get_continent(id)
 
 @router.get("/country", status_code=status.HTTP_200_OK)
-async def get_all_country(is_continent: Country_Service = Depends(country_service), add_route_protection = Depends(get_current_user)):
-    return is_continent.get_all_country()
+async def get_all_country(is_continent: Country_Service = Depends(country_service), injection = Depends(get_current_user)):
+    return injection.get_all_country()
 
 @router.get("/country/{continent_id}", status_code=status.HTTP_200_OK)
-async def get_all_country(continent_id: int, is_continent: Country_Service = Depends(country_service), add_route_protection = Depends(get_current_user)):
-    return is_continent.get_country(continent_id)
+async def get_all_country(continent_id: int, is_continent: Country_Service = Depends(country_service), injection = Depends(get_current_user)):
+    return injection.get_country(continent_id)
 
 @router.get("/state", status_code=status.HTTP_200_OK)
-async def get_all_state(is_state: State_Service = Depends(state_service), add_route_protection = Depends(get_current_user)):
-    return is_state.get_all_state()
+async def get_all_state(is_state: State_Service = Depends(state_service), injection = Depends(get_current_user)):
+    return injection.get_all_state()
 
 @router.get("/state/{country_id}", status_code=status.HTTP_200_OK)
-async def get_all_state(country_id: int, is_state: State_Service = Depends(state_service), add_route_protection = Depends(get_current_user)):
-    return is_state.get_state(country_id)
+async def get_all_state(country_id: int, is_state: State_Service = Depends(state_service), injection = Depends(get_current_user)):
+    return injection.get_state(country_id)
 
 @router.get("/localgovt/{state_id}", status_code=status.HTTP_200_OK)
-async def get_all_state(state_id: int, is_local_govt: Local_Gover_Service = Depends(local_govt_service), add_route_protection = Depends(get_current_user)):
-    return is_local_govt.get_state(state_id)
+async def get_all_state(state_id: int, is_local_govt: Local_Gover_Service = Depends(local_govt_service), injection = Depends(get_current_user)):
+    return injection.get_state(state_id)
 
 

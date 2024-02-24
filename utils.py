@@ -64,6 +64,3 @@ def hash_password(password: str)->bytes:
 
 def check_password(plain_password: str, hashed_password: bytes) -> bool:
     return bcrypt.checkpw(plain_password.encode('utf-8'), hashed_password)
-
-
-    

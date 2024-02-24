@@ -3,11 +3,11 @@ import bcrypt
 from typing import Dict
 
 
-def http_exception_404() -> HTTPException:
+def http_exception_404(message: str) -> HTTPException:
     http_exception = HTTPException(
         status_code= status.HTTP_404_NOT_FOUND, 
         detail= {
-            **http_exception_ext_error(),
+            **http_exception_ext_error(message),
             **http_except_ext_dict_data()
             }
         )
@@ -26,9 +26,9 @@ def http_exception_401() -> HTTPException:
     return http_exception
 
 
-def http_exception_ext_error() -> Dict:
+def http_exception_ext_error(message:str) -> Dict:
     return {
-        "message": "Item Not Found",
+        "message": message,
         "status": "error",
     }
     
@@ -38,9 +38,9 @@ def http_exception_ext() -> Dict:
         "status": "error",
     }
     
-def http_exception_ext_successful() -> Dict:
+def http_exception_ext_successful(message:str) -> Dict:
     return {
-        "message": "Item Found",
+        "message": message,
         "status": "Successful",
     }
     
@@ -64,6 +64,3 @@ def hash_password(password: str)->bytes:
 
 def check_password(plain_password: str, hashed_password: bytes) -> bool:
     return bcrypt.checkpw(plain_password.encode('utf-8'), hashed_password)
-
-
-    

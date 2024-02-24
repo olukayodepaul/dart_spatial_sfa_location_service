@@ -47,6 +47,9 @@ dart_spatial_sfa_company_service
 Run fast Api Server and redis with docker compose
 > docker-compose -f docker-compose.yml up -d
 
+start fast Api without docker for a testing purpose 
+> uvicorn app.apps.main:app --reload --port 8000
+
 #### Application feature
 
 - Redis port number 6310

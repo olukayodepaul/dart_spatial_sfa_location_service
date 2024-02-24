@@ -7,7 +7,7 @@ from utils import serialize_localgovt
 from typing import Dict
 
 
-class Local_Gover_Service:
+class Local_Govt_Service:
     
     def __init__(self, db: Session, payload: Dict):
         self.db = db

@@ -3,7 +3,7 @@ from app.services.continent_service import Continent_Service
 from app.di.dependencies import continent_service, country_service,state_service, local_govt_service
 from app.services.country_service import Country_Service
 from app.services.state_service import State_Service
-from app.services.local_govt_service import Local_Gover_Service
+from app.services.local_govt_service import Local_Govt_Service
 
 
 
@@ -36,7 +36,7 @@ async def is_first_state(country_id: int, injection: State_Service = Depends(sta
     return injection.first_state(country_id)
 
 @router.get("/localgovt/{state_id}", status_code=status.HTTP_200_OK)
-async def get_all_state(state_id: int, injection: Local_Gover_Service = Depends(local_govt_service)):
+async def all_local_govt(state_id: int, injection: Local_Govt_Service = Depends(local_govt_service)):
     return injection.get_local_govt(state_id)
 
 

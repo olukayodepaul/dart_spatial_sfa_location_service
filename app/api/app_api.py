@@ -5,11 +5,7 @@ from app.services.country_service import Country_Service
 from app.services.state_service import State_Service
 from app.services.local_govt_service import Local_Govt_Service
 
-
-
-
 router = APIRouter()
-
 
 @router.get("/continent", status_code=status.HTTP_200_OK)
 async def get_all_continent(injection: Continent_Service = Depends(continent_service)):
@@ -38,5 +34,3 @@ async def is_first_state(country_id: int, injection: State_Service = Depends(sta
 @router.get("/localgovt/{state_id}", status_code=status.HTTP_200_OK)
 async def all_local_govt(state_id: int, injection: Local_Govt_Service = Depends(local_govt_service)):
     return injection.get_local_govt(state_id)
-
-

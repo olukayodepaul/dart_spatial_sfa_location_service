@@ -53,6 +53,17 @@ Run fast Api Server and redis with docker compose
 - fastApi port number 8080
 
 
+### feat: Completed company microservice
+This commit marks the completion of the company microservice. 
 
+feature include:
 
-
+- Implemented CRUD operations for managing companies
+- Added endpoints for adding, retrieving, updating, and deleting companies
+- Integrated JWT-based authentication and authorization middleware
+- Implemented input validation and error handling
+- Documented API endpoints using OpenAPI specifications
+- Optimized database queries
+- Refactored code for readability and maintainability
+- add redis to cache data
+- README file for details

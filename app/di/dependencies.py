@@ -19,4 +19,3 @@ def state_service(db: Session = Depends(get_db), payload = Depends(get_current_u
 
 def local_govt_service(db: Session = Depends(get_db), payload = Depends(get_current_user)):
     return Local_Govt_Service(db=db, payload=payload)
-

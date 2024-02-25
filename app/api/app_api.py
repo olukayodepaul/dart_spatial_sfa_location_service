@@ -34,3 +34,6 @@ async def is_first_state(country_id: int, injection: State_Service = Depends(sta
 @router.get("/localgovt/{state_id}", status_code=status.HTTP_200_OK)
 async def all_local_govt(state_id: int, injection: Local_Govt_Service = Depends(local_govt_service)):
     return injection.get_local_govt(state_id)
+
+def get():
+    pass
